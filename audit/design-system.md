@@ -24,10 +24,18 @@ inconsistent, every observed variant is listed and the inconsistency is recorded
 | Elementor global "secondary" | Roboto Slab, weight 400 | Kit default, unused |
 | Elementor global "text" | Roboto, weight 400 | Kit default, unused |
 | Elementor global "accent" | Roboto, weight 500 | Kit default, unused |
-| Stray declarations | Poppins (×4), IBM Plex Sans (×4) | Isolated widgets only |
+| Poppins | Poppins (×4 declarations) | **Renders** on 4 elements across 4 pages |
+| IBM Plex Sans | IBM Plex Sans (×4 declarations) | Loaded; renders on no visible text element |
 
-Google Fonts requested by the page: `Roboto`, `Roboto Slab`, `Outfit` — all at
-weights 100–900 plus italics. Only Outfit is actually rendered.
+Google Fonts requested by the page: `Outfit`, `Poppins`, `Roboto`, `Roboto Slab`,
+`IBM Plex Sans`, `Work Sans` — all at weights 100–900 plus italics.
+
+Verified by computed style across all 46 pages (2,189 visible text elements sampled):
+**Outfit renders on 2,183 elements on all 46 pages; Poppins renders on 4 elements across
+4 pages** (`/`, `/industries/`, `/managed-wifi/`, `/public-guest-wifi/`); **Roboto renders
+on 2 elements across 2 pages** (`/about/`, `/wifi-network-solutions/`). Roboto Slab,
+IBM Plex Sans and Work Sans are loaded on every page but render on no text element.
+See `reconstruction-source-of-truth.md` §2.
 
 `body` computes to **Outfit, 18px, line-height 20.7px, colour `rgb(0,0,0)`**.
 
@@ -87,10 +95,10 @@ built entirely from `h2` and `h3`, with size — not tag — carrying the hierar
 | `--e-global-color-a3173ef` | **`#94A2B8`** | Slate/muted — 73 references |
 | `--e-global-color-66b6963` | `#FF2424` | Red — defined, effectively unused |
 | `--e-global-color-7bedddd` | `#0E17250A` | Navy at 4% alpha — 1 reference |
-| `--e-global-color-primary` | `#6EC1E4` | **Elementor factory default**, still unedited |
-| `--e-global-color-secondary` | `#54595F` | Elementor factory default |
-| `--e-global-color-text` | `#7A7A7A` | Elementor factory default — but **inherited by real body copy** |
-| `--e-global-color-accent` | `#61CE70` | Elementor factory default green |
+| `--e-global-color-primary` | `#6EC1E4` | Elementor factory default — **and it renders**: 7 text elements on 2 pages |
+| `--e-global-color-secondary` | `#54595F` | Elementor factory default — **renders** on 12 text elements / 4 pages, plus `/0.08` backgrounds on 5 pages |
+| `--e-global-color-text` | `#7A7A7A` | Elementor factory default — **renders** on 15 text elements / 9 pages, and at `/0.15` and `/0.08` for the watermark numerals |
+| `--e-global-color-accent` | `#61CE70` | Elementor factory default green — appears only at `/0` (fully transparent); never visibly green |
 
 ### 2.2 Colours as actually used
 

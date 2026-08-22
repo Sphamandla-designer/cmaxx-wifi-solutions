@@ -197,3 +197,227 @@ Professional recommendation.
 - **Floating WhatsApp button** — Click to Chat plugin, all pages
 - **Preloader** — `the-preloader` plugin, all pages
 - **Scroll cue** — "Scroll Down" button in hero on 6 pages
+
+---
+
+## 4. Component variant map — which page has which variant
+
+**Variants are preserved as separate variants. Nothing here is consolidated.**
+
+### 4.1 Hero variant per page
+
+| Page | Hero variant |
+| --- | --- |
+| `/` | A — split hero w/ image |
+| `/about-2/` | B — centred animated headline |
+| `/about/` | B — centred animated headline |
+| `/cctv-security-solutions/` | B — centred animated headline |
+| `/cloud-microsoft-365/` | B — centred animated headline |
+| `/contact/` | B — centred animated headline |
+| `/industries/` | B — centred animated headline |
+| `/infrastructure-cabling/` | B — centred animated headline |
+| `/managed-wifi/` | B — centred animated headline |
+| `/our-work/` | B — centred animated headline |
+| `/public-guest-wifi/` | B — centred animated headline |
+| `/smart-home/` | B — centred animated headline |
+| `/wifi-network-solutions/` | B — centred animated headline |
+| `/company-profile/` | C — eyebrow + headline |
+| `/cookie-policy/` | C — eyebrow + headline |
+| `/policy-for-public-guest-wifi/` | C — eyebrow + headline |
+| `/policy-popia-2/` | C — eyebrow + headline |
+| `/policy-popia-cmaxx/` | C — eyebrow + headline |
+| `/policy-popia/` | C — eyebrow + headline |
+| `/terms-conditions/` | C — eyebrow + headline |
+| `/areas-we-serve/` | D — plain heading |
+| `/blogs-articles/` | D — plain heading |
+| `/elementskit-content/dynamic-content-megamenu-menuitem696/` | D — plain heading |
+| `/home-wifi-optimisation-for-a-double-storey-property-in-sandton/` | D — plain heading |
+| `/office-wifi-solutions-network-optimisation/` | D — plain heading |
+| `/aruba/` | E — image only |
+| `/cuby/` | E — image only |
+| `/dahua/` | E — image only |
+| `/edimax/` | E — image only |
+| `/eufy/` | E — image only |
+| `/ezviz/` | E — image only |
+| `/grandstream/` | E — image only |
+| `/hilook/` | E — image only |
+| `/linkbasic/` | E — image only |
+| `/mikrotik/` | E — image only |
+| `/reyee-2/` | E — image only |
+| `/reyee/` | E — image only |
+| `/sonoff/` | E — image only |
+| `/tenda/` | E — image only |
+| `/tp-link-tapo/` | E — image only |
+| `/tp-link/` | E — image only |
+| `/ubiquiti/` | E — image only |
+| `/zte/` | E — image only |
+| `/metform-form/request-a-free-network-assessment/` | F — theme template (no Elementor hero) |
+| `/office-wifi-upgrade-for-a-growingbusiness-in-midrand/` | F — theme template (no Elementor hero) |
+| `/why-professional-wifi-installation-matters-for-homes-and-offices-in-gauteng/` | F — theme template (no Elementor hero) |
+
+**Variant differences**
+
+| Variant | Pages | What differs |
+| --- | --- | --- |
+| A — split hero w/ image | 1 | Two-column: eyebrow, animated headline, paragraph, 3-item icon-list, two buttons, image on the right. Only the home page uses this. |
+| B — centred animated headline | 12 | Single centred column: animated headline, paragraph, one or two buttons. No image, no icon-list. |
+| C — eyebrow + headline | 7 | Adds an uppercase eyebrow paragraph above the animated headline; otherwise like B. |
+| D — plain heading | 5 | A single `<h2>` heading widget, no animated headline, no button, no image. |
+| E — image only | 18 | A lone image widget opens the page body — used by every technology brand page. |
+| F — theme template (no Elementor hero) | 3 | No Elementor container at all; the WordPress theme renders an `<h1>` entry title and a byline. |
+
+### 4.2 Breadcrumb (`HOME | PAGE NAME`, plain text)
+
+Present on 7 of 46 pages. The other 39 pages have no breadcrumb.
+
+| Page | Instances |
+| --- | --- |
+| `/areas-we-serve/` | present |
+| `/cookie-policy/` | present |
+| `/policy-for-public-guest-wifi/` | present |
+| `/policy-popia-2/` | present |
+| `/policy-popia-cmaxx/` | present |
+| `/policy-popia/` | present |
+| `/terms-conditions/` | present |
+
+### 4.3 ElementsKit icon-box cards (service / industry / problem cards)
+
+| Page | Instances |
+| --- | --- |
+| `/` | 19 |
+| `/about-2/` | 16 |
+| `/public-guest-wifi/` | 12 |
+| `/industries/` | 7 |
+| `/managed-wifi/` | 6 |
+| `/cctv-security-solutions/` | 4 |
+| `/company-profile/` | 4 |
+| `/infrastructure-cabling/` | 4 |
+| `/wifi-network-solutions/` | 4 |
+
+### 4.4 Statistics — `premium-counter`
+
+| Page | Instances |
+| --- | --- |
+| `/` | 4 |
+| `/cctv-security-solutions/` | 3 |
+| `/cloud-microsoft-365/` | 3 |
+| `/infrastructure-cabling/` | 3 |
+| `/our-work/` | 4 |
+| `/wifi-network-solutions/` | 4 |
+
+### 4.5 Testimonials — Trustindex shortcode
+
+**Variant 1 of 2.** Google-review slider injected by shortcode.
+
+| Page | Instances |
+| --- | --- |
+| `/` | Trustindex slider |
+| `/cctv-security-solutions/` | Trustindex slider |
+| `/cloud-microsoft-365/` | Trustindex slider |
+| `/infrastructure-cabling/` | Trustindex slider |
+| `/our-work/` | Trustindex slider |
+| `/wifi-network-solutions/` | Trustindex slider |
+
+### 4.6 Testimonials — `premium-addon-testimonials`
+
+**Variant 2 of 2.** A different widget with different markup and styling. Both variants are kept separate for Phase 1.
+
+| Page | Instances |
+| --- | --- |
+| `/home-wifi-optimisation-for-a-double-storey-property-in-sandton/` | 1 |
+| `/office-wifi-solutions-network-optimisation/` | 1 |
+
+### 4.7 Contact form — MetForm #143
+
+One form, embedded on 13 pages. AJAX-rendered — no `<form>` element in the served HTML.
+
+| Page | Instances |
+| --- | --- |
+| `/` | embedded |
+| `/blogs-articles/` | embedded |
+| `/contact/` | embedded |
+| `/cookie-policy/` | embedded |
+| `/industries/` | embedded |
+| `/infrastructure-cabling/` | embedded |
+| `/metform-form/request-a-free-network-assessment/` | embedded |
+| `/policy-for-public-guest-wifi/` | embedded |
+| `/policy-popia-2/` | embedded |
+| `/policy-popia-cmaxx/` | embedded |
+| `/policy-popia/` | embedded |
+| `/terms-conditions/` | embedded |
+| `/wifi-network-solutions/` | embedded |
+
+### 4.8 Accordion — `nested-accordion`
+
+| Page | Instances |
+| --- | --- |
+| `/aruba/` | 1 |
+| `/company-profile/` | 1 |
+| `/cuby/` | 1 |
+| `/dahua/` | 1 |
+| `/edimax/` | 1 |
+| `/eufy/` | 1 |
+| `/ezviz/` | 1 |
+| `/grandstream/` | 1 |
+| `/hilook/` | 1 |
+| `/linkbasic/` | 1 |
+| `/managed-wifi/` | 1 |
+| `/mikrotik/` | 1 |
+| `/public-guest-wifi/` | 2 |
+| `/reyee-2/` | 1 |
+| `/reyee/` | 1 |
+| `/smart-home/` | 1 |
+| `/sonoff/` | 1 |
+| `/tenda/` | 1 |
+| `/tp-link-tapo/` | 1 |
+| `/tp-link/` | 1 |
+| `/ubiquiti/` | 1 |
+| `/zte/` | 1 |
+
+### 4.9 Google Maps embed
+
+| Page | Instances |
+| --- | --- |
+| `/areas-we-serve/` | map |
+| `/contact/` | map |
+
+### 4.10 Blog listing — `eael-post-grid`
+
+| Page | Instances |
+| --- | --- |
+| `/` | post grid |
+| `/blogs-articles/` | post grid |
+
+### 4.11 Timeline — `wpr-posts-timeline`
+
+| Page | Instances |
+| --- | --- |
+| `/company-profile/` | timeline |
+| `/industries/` | timeline |
+| `/smart-home/` | timeline |
+
+### 4.12 Image carousel / tabs (single-use components)
+
+| Page | Instances |
+| --- | --- |
+| `/our-work/` | image-carousel |
+| `/smart-home/` | nested-tabs |
+
+### 4.13 Animated headline — `eael-fancy-text`
+
+| Page | Instances |
+| --- | --- |
+| `/` | animated headline |
+| `/about-2/` | animated headline |
+| `/about/` | animated headline |
+| `/cctv-security-solutions/` | animated headline |
+| `/cloud-microsoft-365/` | animated headline |
+| `/company-profile/` | animated headline |
+| `/contact/` | animated headline |
+| `/industries/` | animated headline |
+| `/infrastructure-cabling/` | animated headline |
+| `/managed-wifi/` | animated headline |
+| `/our-work/` | animated headline |
+| `/public-guest-wifi/` | animated headline |
+| `/smart-home/` | animated headline |
+| `/wifi-network-solutions/` | animated headline |

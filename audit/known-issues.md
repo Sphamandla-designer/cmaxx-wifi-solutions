@@ -35,10 +35,12 @@ completely different layout, an 84px `h1`, and a "Post author / Post date" bylin
 
 ## B. Typography
 
-### B1 — Global typography tokens unused · Medium
-The Elementor kit defines Roboto / Roboto Slab as the global type system. Every widget
-overrides it with **Outfit**, set per element. The site loads all weights and italics of
-Roboto and Roboto Slab on every page for nothing.
+### B1 — Global typography tokens overridden; three font families loaded for nothing · Medium
+The Elementor kit defines Roboto / Roboto Slab as the global type system. Nearly every
+widget overrides it with **Outfit**, set per element. Six Google Fonts families are
+requested on every page at weights 100–900 plus italics; computed-style verification
+across all 46 pages shows **Roboto Slab, IBM Plex Sans and Work Sans render on no text
+element at all**, while Poppins renders on only 4 elements and Roboto on only 2.
 
 ### B2 — 23 font sizes in use · High
 14, 15, 16, 17, 18, 19, 20, 21, 22, 25, 26, 28, 30, 31, 33, 35, 38, 40, 47, 50, 60, 70, 84 px.
@@ -53,8 +55,9 @@ proportionally when a size is changed at a breakpoint.
 plus computed values such as `−0.789688px` and `−2.49375px` from percentage tracking.
 
 ### B5 — Body copy inherits Elementor's default grey · Medium
-Rendered body text frequently computes to `#7A7A7A` — the untouched
-`--e-global-color-text` default — rather than a brand colour.
+Rendered body text computes to `#7A7A7A` — the untouched `--e-global-color-text`
+default — on 15 elements across 9 pages, rather than a brand colour. A separate
+near-black `#1F2124` carries body text on 18 pages.
 
 ### B6 — Stray typefaces · Low
 Poppins (×4) and IBM Plex Sans (×4) declarations survive in page CSS.
@@ -63,10 +66,14 @@ Poppins (×4) and IBM Plex Sans (×4) declarations survive in page CSS.
 
 ## C. Colour
 
-### C1 — Four Elementor factory colours still in the kit · Medium
+### C1 — Elementor factory colours are unedited AND visibly rendering · Medium
 `--e-global-color-primary: #6EC1E4`, `secondary: #54595F`, `text: #7A7A7A`,
-`accent: #61CE70` are unedited defaults. The real brand colours live in unnamed custom
-slots (`3280544`, `4a9b6d6`, `a3173ef`), so the palette is not self-describing.
+`accent: #61CE70` are unedited defaults. Three of the four are not merely present but
+**actually rendered on the live site**: `#6EC1E4` on 7 text elements across 2 pages,
+`#54595F` on 12 text elements across 4 pages, `#7A7A7A` on 15 text elements across 9 pages
+(plus its 15%/8% alphas behind the watermark numerals). The real brand colours live in
+unnamed custom slots (`3280544`, `4a9b6d6`, `a3173ef`), so the palette is not
+self-describing.
 
 ### C2 — Two near-identical dark navies · Medium
 `#0E1725` (the token, 1,094 uses) and `#0D1427` (60 uses) are both in play.
