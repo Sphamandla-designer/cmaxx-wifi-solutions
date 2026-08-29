@@ -67,3 +67,21 @@ reconstruction exactly as they appear on the live site, as Phase 1 requires.
 
 Once `mirror/` and `audit/` exist, the reconstruction can be built against them
 and compared page by page with the live site.
+
+## Structured Cabling & Network Infrastructure page
+
+A full rebuild of `/infrastructure-cabling/` as a new page, `/structured-cabling/`, lives in
+`site/structured-cabling/`. It is built against the live site's existing Elementor design
+system (Outfit, `#FF6C24`, `#0E1725`, the WiFi page's button and card styles) — a content
+and structure rebuild inside the existing visual identity, not a new design.
+
+```bash
+npm run qa:cabling      # pre-launch checklist + technical-accuracy guardrails (75 checks)
+npm run copy:cabling    # regenerate content/structured-cabling.md from the page
+```
+
+Read **`docs/structured-cabling-handoff.md`** before publishing. It covers the WordPress
+tasks this repository cannot perform (the 301 from `/infrastructure-cabling/`, nav and
+footer relabelling, canonical and noindex, the nine inbound links), the four link targets
+in the brief that return 404 on the live site, and the fact that the source brief PDF was
+not available to this build — so the copy needs reconciling against it before launch.

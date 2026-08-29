@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "CMAXX WiFi Solutions — website rebuild. Phase 1: faithful reconstruction of the existing site.",
+  "description": "CMAXX WiFi Solutions \u2014 website rebuild. Phase 1: faithful reconstruction of the existing site.",
   "scripts": {
     "mirror": "bash tools/mirror-site.sh",
-    "audit": "node tools/audit-site.mjs"
+    "audit": "node tools/audit-site.mjs",
+    "qa:cabling": "node tools/qa-structured-cabling.mjs",
+    "copy:cabling": "node tools/extract-copy.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0"
