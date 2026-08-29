@@ -434,17 +434,15 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 
 /* --------------------------------------------------------------------- */
-/* Photo slots                                                            */
-/* Real CMAXX project photos drop in at the paths in assets/img/README.md */
-/* Until they do, the slot renders as a branded block showing the alt     */
-/* text, so a missing photo is visible rather than silently broken.       */
+/* Photography                                                            */
 /* --------------------------------------------------------------------- */
 
-.hero img,
-.split img {
-  background: linear-gradient(135deg, #16233a 0%, #0E1725 100%);
-  color: var(--c-muted);
-  min-height: 260px;
-  font-size: 14px;
-  padding: 24px;
-}
+figure { margin: 0; }
+figure img { border-radius: var(--radius-card); width: 100%; }
+figure figcaption { font-size: 14px; }
+
+/* An inline section photo is supporting evidence, not the headline — cap it
+   so it sits alongside the copy rather than taking over the section. */
+.fig-inset { max-width: 720px; }
+.fig-inset img { max-height: 420px; object-fit: cover; }
+.fig-inset figcaption { color: var(--c-text); margin-top: 12px; }

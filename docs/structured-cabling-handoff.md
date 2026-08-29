@@ -11,11 +11,15 @@ or animated counters carry over.
 | --- | --- |
 | `site/structured-cabling/index.html` | The complete page — all 22 sections, ~30 FAQs, final CTA |
 | `site/structured-cabling/assets/styles.css` | Design tokens lifted from the live Elementor kit |
-| `site/structured-cabling/assets/img/README.md` | The six photo slots and what belongs in each |
+| `site/structured-cabling/assets/img/` | Three genuine CMAXX photos, plus a README on the three still wanted |
+| `dist/structured-cabling-complete.html` | One fully self-contained file — CSS, fonts and photos all embedded, zero external requests |
 | `content/structured-cabling.md` | The page copy as plain text, for pasting into Elementor |
 | `tools/qa-structured-cabling.mjs` | Executable pre-launch checklist — `node tools/qa-structured-cabling.mjs` |
 
-Open `site/structured-cabling/index.html` in a browser to review the page as built.
+Open `site/structured-cabling/index.html` in a browser to review the page as built, or
+run `npm run build:embedded` and open `dist/structured-cabling-complete.html` — a single
+file with the stylesheet, the Outfit webfont and every photo embedded, which renders
+identically with no network connection at all.
 
 ## Two things this session could not do
 
@@ -141,8 +145,11 @@ have to wait until those pages are built, or be added to `/wifi-network-solution
 8. **Contact details** — the page uses `info@cmaxxwifisolutions.co.za` throughout, per the
    brief. Note the live site also has `admin@cmaxxsolutions.co.za` in places; that address
    is deliberately not used here.
-9. **Photography** — see `site/structured-cabling/assets/img/README.md`. The hero needs a
-   real CMAXX rack / patch-panel photo before launch, not stock.
+9. **Photography** — the hero, the outdoor section and the PoE section now carry genuine
+   CMAXX photos pulled from the media library. Three further slots (a data-point
+   termination, fibre work, a Cat6/Cat6A close-up) have no real photo yet; those sections
+   were rebuilt to work without one rather than carry stock. See
+   `site/structured-cabling/assets/img/README.md`.
 10. **Inbound links** — the nine pages in the table above.
 
 ## Pre-launch checklist
@@ -155,7 +162,8 @@ lazy-loading, alt text, table captions and scoped headers).
 These still need a human:
 
 - [ ] Copy reconciled against sections 02 and 03 of the developer brief
-- [ ] Real CMAXX photography in all six image slots; hero photo is genuine, not stock
+- [ ] Hero, outdoor and PoE photos approved (all genuine CMAXX work, no stock)
+- [ ] Optional: shoot the three missing subjects — data-point termination, fibre, Cat6A close-up
 - [ ] Nav, breadcrumb and footer say "Structured Cabling" — no "Infrastructure & Cabling"
       left anywhere on the site
 - [ ] 301 from `/infrastructure-cabling/` in place and tested
