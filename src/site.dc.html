@@ -2606,6 +2606,10 @@ textarea.input { min-height: 90px; resize: vertical; }
           </div>
         </aside>
       </div>
+
+      <div style="margin: 44px 0 0; position: relative; border-radius: 40px; overflow: hidden; aspect-ratio: 21 / 8; box-shadow: var(--shadow-lg);">
+        <image-slot id="p6-cabling-hero" shape="rect" placeholder="Drop a labelled CMAXX network rack and patch panel installation in Midrand"></image-slot>
+      </div>
     </div>
   </section>
 
@@ -2799,6 +2803,19 @@ textarea.input { min-height: 90px; resize: vertical; }
         </article>
       </div>
 
+      <div style="margin-top: 42px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <figure style="margin: 0;">
+          <div style="position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: var(--shadow-md);">
+            <image-slot id="p6-cable-termination" shape="rect" placeholder="Drop Cat6 and Cat6A cable being terminated on a CMAXX installation"></image-slot>
+          </div>
+        </figure>
+        <figure style="margin: 0;">
+          <div style="position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: var(--shadow-md);">
+            <image-slot id="p6-outdoor-run" shape="rect" placeholder="Drop a protected outdoor network cable run installed by CMAXX in Gauteng"></image-slot>
+          </div>
+        </figure>
+      </div>
+
       <div style="margin-top: 30px; background: var(--color-surface); border-radius: 32px; padding: 30px 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; align-items: center;">
         <p style="margin: 0; font-family: var(--font-heading); font-size: 22px; line-height: 1.24;">Not sure which cable or design your property needs?</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -2853,6 +2870,27 @@ textarea.input { min-height: 90px; resize: vertical; }
             <p style="margin: 0 0 12px; font-size: 15px; color: var(--color-accent-2-900);">Depending on scope, CMAXX performs wire-map and continuity verification, checks terminations and link status, validates connectivity, labels data points and patch-panel positions, and documents the installed routes or port schedule.</p>
             <p style="margin: 0; font-size: 15px; font-weight: 700; color: var(--color-accent-2-900);">Where a project requires formal standards-based certification, the testing method and reporting requirement should be specified separately before work begins.</p>
           </article>
+        </div>
+
+        <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <figure style="margin: 0;">
+          <div style="position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow-md);">
+            <image-slot id="p6-poe-ap-cabling" shape="rect" placeholder="Drop PoE Ethernet cabling run to a ceiling WiFi access point"></image-slot>
+          </div>
+          <figcaption style="margin-top: 10px; font-size: 13.5px; color: var(--color-neutral-700);">PoE cabling to a ceiling access point.</figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <div style="position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow-md);">
+            <image-slot id="p6-data-point" shape="rect" placeholder="Drop a professionally installed Ethernet data point and wall outlet"></image-slot>
+          </div>
+          <figcaption style="margin-top: 10px; font-size: 13.5px; color: var(--color-neutral-700);">A terminated data point at a workstation.</figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <div style="position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow-md);">
+            <image-slot id="p6-fibre-backbone" shape="rect" placeholder="Drop a fibre backbone link installed by CMAXX at a multi-building property"></image-slot>
+          </div>
+          <figcaption style="margin-top: 10px; font-size: 13.5px; color: var(--color-neutral-700);">Fibre backbone between buildings.</figcaption>
+        </figure>
         </div>
       </div>
     </div>
@@ -2919,6 +2957,15 @@ textarea.input { min-height: 90px; resize: vertical; }
   <!-- 08 — FAQ -->
   <section id="p6-faq" style="padding: 96px 24px 0;">
     <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="margin-bottom: 52px; background: var(--color-surface); border-radius: 32px; padding: 30px 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; align-items: center;">
+        <p style="margin: 0; font-family: var(--font-heading); font-size: 22px; line-height: 1.24;">Ready to have the infrastructure looked at properly?</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="/contact/" style="font-size: 15.5px; padding: 14px 26px;">Book a Cabling Site Survey</a>
+          <a class="btn btn-secondary" href="/contact/" style="font-size: 15.5px; padding: 14px 24px;">Request a Quote</a>
+          <a class="btn btn-secondary" href="tel:0101403660" style="font-size: 15.5px; padding: 14px 24px;">Call 010 140 3660</a>
+        </div>
+      </div>
+
       <h2 style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; margin: 0 0 18px;">Structured Cabling Questions Answered</h2>
       <p style="max-width: 58ch; margin: 0 0 42px; font-size: 18px;">The technical questions customers ask before booking a site survey.</p>
 
@@ -2943,6 +2990,14 @@ textarea.input { min-height: 90px; resize: vertical; }
         <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;"><summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>When should fibre be used instead of copper Ethernet?</summary><p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">Fibre is often the better choice when the link needs to exceed normal copper Ethernet distances, connect separate buildings, provide a high-capacity backbone or meet a specific environmental or scalability requirement. CMAXX can recommend single-mode or multimode fibre based on the actual link design.</p></details>
         <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;"><summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>How long does a structured cabling installation take?</summary><p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">The timeline depends on the number of points, building access, ceiling type, conduit availability, drilling or trunking requirements, cabinet work and whether the installation is residential or commercial. Small additions may be completed quickly, while office fit-outs or multi-building projects require a planned installation schedule.</p></details>
         <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;"><summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>Can cabling be hidden so the installation looks neat?</summary><p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">Where the building allows it, cables can be routed through ceiling spaces, conduits, ducts, risers or suitable wall routes. Where concealed routes are not practical, neat trunking or protected surface routes can be considered. The site survey determines the best balance between appearance, serviceability and cost.</p></details>
+        <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;">
+          <summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>Do you provide structured cabling for both homes and businesses?</summary>
+          <p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">Yes. CMAXX supports homes, offices, SMEs, student accommodation, retail, hospitality, schools, churches, warehouses, farms and other properties across Gauteng. The design and hardware are matched to the size and operational needs of each site — a single additional data point and a multi-floor office fit-out are the same discipline at different scales.</p>
+        </details>
+        <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;">
+          <summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>Can you assess an existing network before I decide what to replace?</summary>
+          <p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">Yes, and in many cases an assessment is the best first step. CMAXX can review the existing cabling, cabinet, switches, WiFi and connected devices, identify where the actual bottleneck is, and then recommend only the changes that are justified. It is common for a network blamed on cabling to be limited by something else entirely — see <a href="/wifi-assessment-troubleshooting/">WiFi Assessment &amp; Troubleshooting</a>.</p>
+        </details>
         <details style="background: var(--color-surface); border-radius: 26px; padding: 22px 26px; margin: 0 0 14px; break-inside: avoid;"><summary style="display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-heading); font-size: 18px; line-height: 1.25;"><span data-chev="" aria-hidden="true" style="flex: none; margin-top: 6px; width: 11px; height: 11px; border-right: 2.75px solid var(--color-accent); border-bottom: 2.75px solid var(--color-accent); transform: rotate(-45deg); transition: transform 0.18s ease;"></span>Which areas do you provide network cabling services in?</summary><p style="margin: 14px 0 0 25px; font-size: 15px; color: var(--color-neutral-800);">CMAXX is based in Midrand and supports clients across Johannesburg, Sandton, Centurion, Pretoria, Randburg, Fourways, Bryanston, Waterfall, Kyalami, Bedfordview, Edenvale, Kempton Park and surrounding Gauteng areas. Contact us for larger projects outside the listed areas.</p></details>
       </div>
 
