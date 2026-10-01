@@ -62,7 +62,7 @@ NEW_PAGES = [
         "title": "Smart Home Installation Gauteng | CMAXX",
         "desc": "Smart home installation and integration across Gauteng. Connect compatible lighting, WiFi, cameras and entertainment. Request a CMAXX assessment.",
         "file": "smart-home.html",
-        "nav": [("#smart-home-services", "Services"), ("#connectivity", "Connectivity"),
+        "nav": [("#smart-home-services", "Services"), ("#automation", "Routines"),
                 ("#ecosystems", "Compatibility"), ("#smart-home-faqs", "FAQs")],
         "cta": ("#smart-home-enquiry", "Request a Smart Home Assessment", "new_smart_home"),
         "sticky": ("#smart-home-enquiry", "Request a Smart Home Assessment", "new_smart_home",
@@ -94,6 +94,25 @@ NEW_PAGES = [
     },
 ]
 
+sys.path.insert(0, str(SRC))
+import subpages  # noqa: E402
+
+
+def _subpage_config(sp, cta_service=None):
+    """Header/sticky/meta config for a generated sub-page."""
+    nav = [("#" + s["id"], s["nav"]) for s in sp["sections"] if s.get("nav")][:4]
+    eid = "#" + sp["enquiry_id"]
+    return {
+        "route": sp["route"], "label": sp["label"], "title": sp["title"], "desc": sp["desc"],
+        "body": subpages.render_body(sp), "nav": nav,
+        "cta": (eid, sp["cta"], cta_service),
+        "sticky": (eid, sp["cta"], cta_service, sp["wa"]),
+    }
+
+
+NEW_PAGES += [_subpage_config(sp) for sp in subpages.MANAGED_SUBPAGES]
+NEW_PAGES += [_subpage_config(sp, sp["service"]) for sp in subpages.SMART_SUBPAGES]
+
 # Site navigation: (group, [(route, label)])
 SITE_NAV = [
     ("WiFi & Network", [
@@ -103,11 +122,25 @@ SITE_NAV = [
         ("/wifi-assessment-troubleshooting/", "Assessment & Troubleshooting"),
         ("/outdoor-wifi-solutions/", "Outdoor WiFi"),
         ("/event-wifi-solutions/", "Event WiFi"),
+    ]),
+    ("Managed WiFi", [
         ("/managed-wifi/", "Managed WiFi"),
+        ("/managed-wifi/businesses-offices/", "Businesses & Offices"),
+        ("/managed-wifi/restaurants-cafes/", "Restaurants & Cafes"),
+        ("/managed-wifi/retail-premises/", "Retail & Customer-Facing Premises"),
+        ("/managed-wifi/schools/", "Schools & Training Facilities"),
+        ("/managed-wifi/residential-estates/", "Residential Estates"),
+        ("/managed-wifi/events/", "Event Venues & Events"),
+        ("/managed-wifi/public-facilities/", "Community & Public Facilities"),
     ]),
     ("Smart Home", [
         ("/smart-home/", "Smart Home Services"),
         ("/smart-home/smart-lighting-switches/", "Smart Lighting & Switches"),
+        ("/smart-home/connected-entertainment/", "Connected Entertainment"),
+        ("/smart-home/smart-security-access/", "Smart Security & Access"),
+        ("/smart-home/climate-control/", "Climate Control"),
+        ("/smart-home/reliable-connectivity/", "Reliable Connectivity"),
+        ("/smart-home/smart-utilities/", "Smart Utilities"),
         ("/smart-home/setup-troubleshooting/", "Setup & Troubleshooting"),
     ]),
     ("Infrastructure & IT", [
@@ -141,6 +174,8 @@ CLUSTER_OF = {
     "/smart-home/smart-lighting-switches/": "/smart-home/",
     "/smart-home/setup-troubleshooting/": "/smart-home/",
 }
+CLUSTER_OF.update({sp["route"]: "/managed-wifi/" for sp in subpages.MANAGED_SUBPAGES})
+CLUSTER_OF.update({sp["route"]: "/smart-home/" for sp in subpages.SMART_SUBPAGES})
 
 ROUTE_ALIASES = {
     "/": "/wifi-network-solutions/",
@@ -261,7 +296,7 @@ NETWORK_PROPERTY_TYPES = [
 ]
 SMART_SERVICES = [
     ("new_smart_home", "New smart-home project"), ("lighting", "Smart lighting and switches"),
-    ("support", "Existing-device setup or troubleshooting"), ("entertainment", "Connected entertainment"),
+    ("connectivity", "WiFi and network for smart devices"), ("support", "Existing-device setup or troubleshooting"), ("entertainment", "Connected entertainment"),
     ("security", "Cameras/intercom integration"), ("climate", "Compatible climate integration"),
     ("other_integration", "Smart plugs, sensors or other integration"), ("not_sure", "Other / not sure"),
 ]
@@ -317,10 +352,11 @@ def form_shell(fid, kind, service_ctx, title, intro, fields_html, privacy, submi
           </form>'''
 
 
-def form_network(variant):
-    p = "sa" if variant == "student" else "mw"
+def form_network(variant, prefix=None):
+    """variant: 'managed' (no preselection) or a property-type value to preselect."""
+    p = prefix or ("sa" if variant == "student" else "mw")
     fid = f"{p}-form"
-    default_type = "student" if variant == "student" else ""
+    default_type = "" if variant == "managed" else variant
     intro = ("Tell us where the property is, how it is used and what needs attention. Approximate occupancy is enough for the initial enquiry."
              if variant == "student" else
              "Share the basics below. You do not need a technical equipment list to start the conversation.")
@@ -378,8 +414,11 @@ SMART_FORM_TEXT = {
 }
 
 
-def form_smart(service):
-    p, submit, title, intro = SMART_FORM_TEXT[service]
+def form_smart(service, prefix=None):
+    p, submit, title, intro = SMART_FORM_TEXT.get(service, (
+        "sx", "Send Smart Home Enquiry", "Smart home enquiry",
+        "Tell us what you want to achieve. You do not need a finished equipment list."))
+    p = prefix or p
     fid = f"{p}-form"
     f = [
         field(f"{p}-name", "Full name", text_input(f"{p}-name", "full_name", autocomplete="name", required=True), required=True),
@@ -405,8 +444,8 @@ def form_smart(service):
 def expand(body):
     body = re.sub(r"\[\[U:([\w-]+)\]\]", lambda m: unsplash(m.group(1)), body)
     body = re.sub(r"\[\[WA:([^\]]+)\]\]", lambda m: esc(wa(html.unescape(m.group(1)))), body)
-    body = re.sub(r"\[\[FORM_NETWORK:(\w+)\]\]", lambda m: form_network(m.group(1)), body)
-    body = re.sub(r"\[\[FORM_SMART:(\w+)\]\]", lambda m: form_smart(m.group(1)), body)
+    body = re.sub(r"\[\[FORM_NETWORK:(\w+)(?::(\w+))?\]\]", lambda m: form_network(m.group(1), m.group(2)), body)
+    body = re.sub(r"\[\[FORM_SMART:(\w+)(?::(\w+))?\]\]", lambda m: form_smart(m.group(1), m.group(2)), body)
     left = re.findall(r"\[\[[^\]]*\]\]", body)
     if left:
         sys.exit(f"Unexpanded markers: {left}")
@@ -414,7 +453,7 @@ def expand(body):
 
 
 def build_page(page):
-    body = expand((SRC / "pages" / page["file"]).read_text())
+    body = expand(page["body"] if "body" in page else (SRC / "pages" / page["file"]).read_text())
     return (
         f'<section data-page="{page["route"]}" data-screen-label="{esc(page["label"])}" '
         f'data-title="{esc(page["title"])}" data-description="{esc(page["desc"])}" style="display: none;">\n\n'

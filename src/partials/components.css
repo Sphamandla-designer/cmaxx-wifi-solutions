@@ -42,7 +42,7 @@
 .cx-muted { color: var(--color-neutral-800); }
 .cx-small { font-size: 14px; color: var(--color-neutral-700); }
 .cx-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 40px 56px; align-items: start; }
-.cx-grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
+.cx-grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; }
 .cx-grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
 .cx-stack > * + * { margin-top: 18px; }
 .cx-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 56px; align-items: start; }

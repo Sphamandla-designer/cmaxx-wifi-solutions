@@ -4,26 +4,30 @@ The site lives in **`CMAXX Website (standalone).html`**: a single self-contained
 (open it in any browser) that holds every page and switches between them by URL hash,
 e.g. `…standalone.html#/managed-wifi/`.
 
-## Pages (14)
+## Pages (26)
 
 | Cluster | Pages |
 | --- | --- |
-| WiFi & Network | WiFi & Network Solutions · Home WiFi · Business & Office WiFi · WiFi Assessment & Troubleshooting · Outdoor WiFi · Event WiFi · **Managed WiFi** (new) |
-| Smart Home | **Smart Home Services** (new) · **Smart Lighting & Switches** (new) · **Setup & Troubleshooting** (new) |
+| WiFi & Network | WiFi & Network Solutions · Home WiFi · Business & Office WiFi · WiFi Assessment & Troubleshooting · Outdoor WiFi · Event WiFi |
+| Managed WiFi | **Managed WiFi** · Businesses & Offices · Restaurants & Cafes · Retail & Customer-Facing Premises · Schools & Training Facilities · Residential Estates · Event Venues & Events · Community & Public Facilities |
+| Smart Home | **Smart Home Services** · Smart Lighting & Switches · Connected Entertainment · Smart Security & Access · Climate Control · Reliable Connectivity · Smart Utilities · Setup & Troubleshooting |
 | Infrastructure & IT | Structured Cabling · CCTV & Security · Cloud & Microsoft 365 |
-| Industries | **Student Accommodation WiFi Solutions** (new) |
+| Industries | Student Accommodation WiFi Solutions |
 
-The new pages implement the *Managed WiFi* and *Smart Home Services* developer briefs
-(1 Oct 2026 / 30 Sep 2026). Every page has at most 10 sections excluding the hero and
-footer, so the briefs' longer section lists are grouped (all publishable copy is kept):
+Every page has at most 10 sections excluding the hero and footer. All publishable copy
+from the *Managed WiFi* and *Smart Home Services* developer briefs is used.
 
-| Page | Brief sections → page sections |
-| --- | --- |
-| Managed WiFi | C02+C03 · C04+C05 · C06 · C07+C08 · C09+C10 · C11 · C12 · C13+C14+C15 · C16 (20 FAQs) · C17 enquiry |
-| Student Accommodation | D02 · D03 · D04 · D05 · D06+D07 · D08 · D09 · D10 (8 FAQs) · D11 enquiry |
-| Smart Home Services | P02 · P03+P17 · P04 · P05+P06 · P07+P08 · P09+P10 · P11+P12 · P13+P14+P16 · P15+P18+P19+P20 · P21 (28 FAQs) + P22 enquiry |
-| Smart Lighting & Switches | L02 · L03 · L04 · L05 · L06 · L07 (10 FAQs) · L08 enquiry |
-| Setup & Troubleshooting | S02 · S03 · S04 · S05 · S06 · S07 (10 FAQs) · S08 enquiry |
+- **Parent pages** keep the overview, education, scope, process, FAQs and enquiry. Their
+  card grids ("Find the right approach for your environment", "Choose what you want your
+  smart home to do") link to one sub-page per card.
+- **Sub-pages** hold the detail for each environment or service. Managed WiFi sector copy
+  comes from brief C10–C12 and C16. Smart Home service copy comes from P04 and P07–P10,
+  plus the Part 07 future-page specs for entertainment and access.
+- Every sub-page has its own enquiry form. The form preselects that service or property
+  type. The briefs originally kept this sector detail on the parent pages; the sub-pages
+  were added at CMAXX's request.
+
+Sub-page content and layout live in `src/subpages.py` (data plus a small renderer).
 
 ### How the pages are connected
 
@@ -44,7 +48,8 @@ Do not edit the standalone file by hand. Edit the sources and rebuild:
 src/base-template.html        original 9-page template (as extracted from the bundle)
 src/partials/components.css   shared cx- component styles (uses the existing design tokens)
 src/partials/router.js        routing, in-page anchors, form validation, image fallback
-src/pages/*.html              bodies of the five new pages
+src/pages/*.html              bodies of the five hand-written new pages
+src/subpages.py               the 12 Managed WiFi / Smart Home sub-pages
 tools/build_site.py           page config (titles, meta, nav), existing-page bridge copy
 
 npm run build                 # = python3 tools/build_site.py
