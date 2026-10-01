@@ -6,7 +6,8 @@
   "description": "CMAXX WiFi Solutions — website rebuild. Phase 1: faithful reconstruction of the existing site.",
   "scripts": {
     "mirror": "bash tools/mirror-site.sh",
-    "audit": "node tools/audit-site.mjs"
+    "audit": "node tools/audit-site.mjs",
+    "build": "python3 tools/build_site.py"
   },
   "dependencies": {
     "cheerio": "^1.0.0"
