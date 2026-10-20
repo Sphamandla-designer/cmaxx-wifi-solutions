@@ -19,3 +19,9 @@ node render.mjs . ..
 
 Background scenes in `source/assets/` were generated for these posts (no stock licensing attached).
 The logo is `logo-white.png`, derived from the site logo. Brand accent: `#f37021`.
+
+## Light version (Managed WiFi)
+
+`cmaxx-managed-wifi-post-light.png` (1:1, 2160 x 2160) reuses the bright office/router
+reference poster with the original branding and text removed and CMaxx details in the same
+layout. Source: `source/managed-wifi-light.html`, background `source/assets/managed-wifi-light-bg.png`.
