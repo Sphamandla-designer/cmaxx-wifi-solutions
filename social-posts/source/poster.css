@@ -1,0 +1,33 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#0d0f16}
+body{font-family:"Inter","Inter Display",system-ui,sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+.poster{position:relative;width:1080px;height:1350px;overflow:hidden;background:#0d0f16}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(10,12,20,.78) 0%,rgba(10,12,20,.62) 30%,rgba(10,12,20,.25) 50%,rgba(10,12,20,0) 62%),
+  linear-gradient(0deg,rgba(8,9,14,.96) 0%,rgba(8,9,14,.78) 16%,rgba(8,9,14,0) 40%)}
+.vignette{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.45) 100%)}
+.top{position:absolute;top:52px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center}
+.top img{height:84px;width:auto;display:block}
+.top .site{font-size:21px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.85)}
+.hero{position:absolute;left:64px;right:64px;top:178px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#f37021;margin-bottom:26px}
+.eyebrow::before{content:"";width:34px;height:3px;background:#f37021;border-radius:2px}
+h1{font-family:"Inter Display","Inter",sans-serif;font-size:104px;line-height:.98;font-weight:800;letter-spacing:-.035em;text-wrap:balance}
+h1 em{font-style:normal;color:#f37021}
+.sub{margin-top:24px;font-size:28px;line-height:1.35;font-weight:400;color:rgba(255,255,255,.86);max-width:700px}
+.sub b{font-weight:600;color:#fff}
+.features{position:absolute;left:64px;right:64px;top:596px;display:grid;grid-template-columns:repeat(4,1fr)}
+.f{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:6px 10px 4px;border-left:1px solid rgba(255,255,255,.22)}
+.f:first-child{border-left:0}
+.f svg{width:42px;height:42px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));stroke:#f37021;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.f .t{font-size:21px;font-weight:700;line-height:1.15;letter-spacing:-.01em;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.f .d{font-size:15px;color:rgba(255,255,255,.72);font-weight:500;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.cta{position:absolute;left:64px;bottom:150px;display:inline-flex;align-items:center;gap:16px;height:72px;padding:0 30px 0 34px;border-radius:999px;
+     background:#f37021;color:#0d0f16;font-size:22px;font-weight:800;letter-spacing:.01em;box-shadow:0 18px 50px rgba(243,112,33,.38)}
+.cta svg{width:26px;height:26px;stroke:#0d0f16;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.contact{position:absolute;left:64px;right:64px;bottom:60px;display:flex;align-items:center;justify-content:space-between;
+         padding-top:26px;border-top:1px solid rgba(255,255,255,.16)}
+.contact div{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.005em}
+.contact svg{width:24px;height:24px;stroke:#f37021;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tag{position:absolute;right:64px;bottom:170px;font-size:17px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}

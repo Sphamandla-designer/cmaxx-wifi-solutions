@@ -1,0 +1,21 @@
+# CMAXX social media posts
+
+Two 4:5 feed posts (2160 x 2700 px, Instagram / Facebook / LinkedIn ready).
+
+| File | Promotes |
+| --- | --- |
+| `cmaxx-smart-home-post.png` | https://1124817.eu9.myftpupload.com/smart-home/ |
+| `cmaxx-managed-wifi-post.png` | https://1124817.eu9.myftpupload.com/managed-wifi/ |
+
+## Editing
+
+The posters are built from `source/*.html` + `source/poster.css` and rendered with Playwright.
+Change the copy in the HTML, then from `source/` run:
+
+```bash
+npm i playwright   # once
+node render.mjs . ..
+```
+
+Background scenes in `source/assets/` were generated for these posts (no stock licensing attached).
+The logo is `logo-white.png`, derived from the site logo. Brand accent: `#f37021`.
