@@ -31,3 +31,8 @@ layout. Source: `source/managed-wifi-light.html`, background `source/assets/mana
 `cmaxx-smart-home-post-light.png` (4:5, 2160 x 2700) reuses the living-room/phone reference
 poster with the original branding and text removed and CMaxx copy in the same positions.
 Source: `source/smart-home-light.html`, background `source/assets/smart-home-light-bg.png`.
+
+## All services (light)
+
+`cmaxx-services-post.png` (4:5, 2160 x 2700) lists all seven core services on a bright scene.
+Source: `source/services.html`, background `source/assets/services-bg.png`.
