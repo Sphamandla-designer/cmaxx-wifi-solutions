@@ -25,3 +25,9 @@ The logo is `logo-white.png`, derived from the site logo. Brand accent: `#f37021
 `cmaxx-managed-wifi-post-light.png` (1:1, 2160 x 2160) reuses the bright office/router
 reference poster with the original branding and text removed and CMaxx details in the same
 layout. Source: `source/managed-wifi-light.html`, background `source/assets/managed-wifi-light-bg.png`.
+
+## Light version (Smart Home)
+
+`cmaxx-smart-home-post-light.png` (4:5, 2160 x 2700) reuses the living-room/phone reference
+poster with the original branding and text removed and CMaxx copy in the same positions.
+Source: `source/smart-home-light.html`, background `source/assets/smart-home-light-bg.png`.
