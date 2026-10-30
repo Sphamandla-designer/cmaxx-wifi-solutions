@@ -18,7 +18,7 @@ Brand colours: red #C0121E, white #FFFFFF, black #0B0B0B.
 
 ## Textured versions
 
-Every state also comes as kiy-trucking-textured-<state>, where KIY carries the
+Every state also comes as kiy-trucking-textured-<state>, where KIY and TRUCKING carry the
 distressed grunge texture from the original logo. The texture is real vector
 artwork (no filters or raster effects), so it prints cleanly at any size.
 Use the clean versions for small sizes, embroidery and engraving; use the
