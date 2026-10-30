@@ -2,3 +2,6 @@ node_modules/
 mirror/
 audit/*.json
 .DS_Store
+
+# Python wheel downloads
+*.whl
