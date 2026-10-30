@@ -16,11 +16,19 @@ Brand colours: red #C0121E, white #FFFFFF, black #0B0B0B.
 | kiy-trucking-mono-black | black | black | transparent | light backgrounds, stamps, engraving |
 | kiy-trucking-mono-red | red | red | transparent | one-colour red print |
 
+## Textured versions
+
+Every state also comes as kiy-trucking-textured-<state>, where KIY carries the
+distressed grunge texture from the original logo. The texture is real vector
+artwork (no filters or raster effects), so it prints cleanly at any size.
+Use the clean versions for small sizes, embroidery and engraving; use the
+textured versions for large print, vehicle wraps and social media.
+
 ## Folders
 
 - svg/  Editable vector files. Scale to any size with no loss. Each file has
         a "kiy" group and a "trucking" group so the colours can be changed.
-- png/  Each state at 1000, 2000 and 4000 px wide. Transparent background,
+- png/  Each state, clean and textured, at 1000, 2000 and 4000 px wide. Transparent background,
         except the on-black version which is solid black.
 
 Use the SVGs for print, signage, vehicle wraps and embroidery digitising.
