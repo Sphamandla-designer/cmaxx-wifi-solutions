@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KIY Trucking Letterhead</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,700;1,800;1,900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ---- KIY Trucking identity tokens (sampled from the supplied logo) ---- */
+  :root{
+    --kiy-black:#000000;
+    --kiy-ink:#0b0b0b;
+    --kiy-red:#b5010d;      /* logo red */
+    --kiy-red-hot:#e3121f;  /* highlight red used in the social artwork */
+    --kiy-steel:#4a4d52;
+    --kiy-grey:#8a8d92;
+    --kiy-line:#d9dbde;
+    --kiy-paper:#ffffff;
+    --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+    --body:"Barlow","Inter",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:#2b2b2b}
+  body{font-family:var(--body);color:var(--kiy-ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:0}
+  @media print{html{background:#fff}.page{box-shadow:none;margin:0}}
+  @media screen{.page{margin:24px auto;box-shadow:0 20px 60px rgba(0,0,0,.45)}}
+
+  .page{
+    position:relative;width:210mm;height:297mm;background:var(--kiy-paper);
+    overflow:hidden;page-break-after:always;
+  }
+  .page:last-child{page-break-after:auto}
+
+  /* ---------- HEADER ---------- */
+  .hdr{
+    position:absolute;left:0;top:0;width:210mm;height:50mm;
+    background:var(--kiy-black);color:#fff;
+    clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+  }
+  /* angled cut on the lower edge, echoing the logo's forward lean */
+  .hdr::after{
+    content:"";position:absolute;left:0;bottom:-1px;width:100%;height:14mm;
+    background:var(--kiy-paper);
+    clip-path:polygon(0 100%,100% 100%,100% 0,0 68%);
+  }
+  .hdr-logo{
+    position:absolute;left:14mm;top:7mm;height:28mm;width:auto;
+    display:block;mix-blend-mode:screen;
+  }
+  .hdr-contact{
+    position:absolute;right:14mm;top:6.5mm;text-align:right;
+    font-family:var(--display);font-weight:500;font-size:9pt;line-height:1.42;
+    letter-spacing:.04em;color:#e9e9e9;
+  }
+  .hdr-contact strong{display:block;font-weight:700;font-size:10.5pt;letter-spacing:.14em;color:#fff;margin-bottom:.8mm}
+  .hdr-contact span{display:block}
+  .hdr-contact .red{color:var(--kiy-red-hot);font-weight:700}
+
+  /* red speed stripe – the logo's swoosh carried across the sheet */
+  .stripe{
+    position:absolute;left:0;top:40.5mm;width:210mm;height:9.5mm;pointer-events:none;
+  }
+  .stripe .a{position:absolute;left:0;top:0;width:100%;height:100%;
+    background:var(--kiy-red);
+    clip-path:polygon(0 56%,100% 0,100% 18%,0 86%)}
+  .stripe .b{position:absolute;left:0;top:0;width:100%;height:100%;
+    background:var(--kiy-red-hot);
+    clip-path:polygon(0 94%,62% 48%,62% 56%,0 100%)}
+
+  /* ---------- BODY ---------- */
+  .body{
+    position:absolute;left:22mm;right:22mm;top:64mm;bottom:38mm;
+    font-size:10.5pt;line-height:1.55;color:#1c1c1c;
+  }
+  .meta{display:flex;justify-content:space-between;gap:12mm;margin-bottom:9mm;
+    font-family:var(--display);font-size:10.5pt;letter-spacing:.03em}
+  .meta .to{color:#1c1c1c;line-height:1.45}
+  .meta .to b{font-weight:700;letter-spacing:.06em}
+  .meta .ref{text-align:right;color:var(--kiy-steel);line-height:1.6}
+  .meta .ref b{color:var(--kiy-ink);font-weight:700}
+  .subject{
+    font-family:var(--display);font-style:italic;font-weight:800;font-size:15pt;
+    letter-spacing:.03em;text-transform:uppercase;color:var(--kiy-ink);
+    border-left:3.5pt solid var(--kiy-red);padding-left:4mm;margin:0 0 7mm;
+  }
+  .body p{margin:0 0 4.2mm}
+  .sign{margin-top:10mm}
+  .sign .line{width:52mm;border-bottom:1pt solid var(--kiy-ink);height:12mm;margin-bottom:2mm}
+  .sign b{display:block;font-family:var(--display);font-weight:700;font-size:11.5pt;letter-spacing:.08em;text-transform:uppercase}
+  .sign small{display:block;color:var(--kiy-steel);font-size:9.5pt}
+
+  /* ---------- FOOTER ---------- */
+  .ftr{
+    position:absolute;left:0;bottom:0;width:210mm;height:33mm;
+  }
+  .ftr .band{
+    position:absolute;left:0;bottom:0;width:100%;height:24mm;background:var(--kiy-black);
+    clip-path:polygon(0 0,100% 30%,100% 100%,0 100%);
+  }
+  .ftr .rule{
+    position:absolute;left:0;bottom:22.6mm;width:100%;height:3.2mm;background:var(--kiy-red);
+    clip-path:polygon(0 40%,100% 0,100% 64%,0 100%);
+  }
+  .ftr .cols{
+    position:absolute;left:14mm;right:14mm;bottom:4.5mm;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    color:#d6d6d6;font-family:var(--display);font-size:8pt;letter-spacing:.04em;line-height:1.45;gap:4mm;
+  }
+  .ftr .cols > div{min-width:0;flex:1 1 0}
+  .ftr .cols b{display:block;color:#fff;font-weight:700;letter-spacing:.12em;font-size:8.6pt}
+  .ftr .tag{
+    font-style:italic;font-weight:800;font-size:10.5pt;letter-spacing:.06em;white-space:nowrap;flex:1 1 0;text-align:center;text-transform:uppercase;color:#fff;
+  }
+  .ftr .tag em{color:var(--kiy-red-hot);font-style:inherit}
+  .ftr .reg{text-align:right}
+  .ftr .mid{text-align:center}
+
+  /* ---------- CONTINUATION SHEET (page 2+) ---------- */
+  .page.cont .hdr{height:20mm}
+  .page.cont .hdr::after{height:8mm;clip-path:polygon(0 100%,100% 100%,100% 0,0 60%)}
+  .page.cont .hdr-logo{top:3mm;height:12mm;left:14mm}
+  .page.cont .hdr-contact{top:3.5mm}
+  .page.cont .hdr-contact{top:4.2mm;font-size:8.5pt}
+  .page.cont .hdr-contact strong{font-size:9pt;margin-bottom:0}
+  .page.cont .stripe{top:14.5mm;height:7mm}
+  .page.cont .body{top:32mm}
+  .pgnum{
+    position:absolute;right:22mm;top:24mm;font-family:var(--display);font-size:8.5pt;
+    letter-spacing:.12em;color:var(--kiy-grey);text-transform:uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 : LETTERHEAD ============ -->
+<section class="page">
+  <header class="hdr">
+    <img class="hdr-logo" src="kiy-trucking-logo.jpg" alt="KIY Trucking">
+    <div class="hdr-contact">
+      <strong>KIY TRUCKING (PTY) LTD</strong>
+      <span>[Street address line 1]</span>
+      <span>[Suburb, City, Postal code]</span>
+      <span class="red">+27 00 000 0000</span>
+      <span>info@kiytrucking.co.za</span>
+      <span>www.kiytrucking.co.za</span>
+    </div>
+  </header>
+  <div class="stripe"><div class="a"></div><div class="b"></div></div>
+
+  <main class="body">
+    <div class="meta">
+      <div class="to">
+        <b>TO:</b><br>
+        [Recipient name]<br>
+        [Company]<br>
+        [Address]
+      </div>
+      <div class="ref">
+        <b>DATE:</b> [DD Month YYYY]<br>
+        <b>REF:</b> KIY/[0000]<br>
+        <b>ATT:</b> [Contact person]
+      </div>
+    </div>
+
+    <h1 class="subject">Subject: Cross-border freight proposal</h1>
+
+    <p>Dear [Recipient],</p>
+    <p>Thank you for considering KIY Trucking for your cross-border freight requirements. We move cargo from South Africa into the SADC region and beyond, with a fleet of interlink and tautliner units, experienced long-haul drivers and full customs-clearing support at every port of entry.</p>
+    <p>Every consignment is tracked in real time and backed by goods-in-transit cover, so you always know where your load is and when it will arrive. Our 24/7 operations desk coordinates loading, border documentation and delivery confirmation on your behalf.</p>
+    <p>We would welcome the opportunity to discuss your routes and volumes in detail. Please contact our operations office at the number above to arrange a meeting or request a formal quotation.</p>
+    <p>Yours faithfully,</p>
+
+    <div class="sign">
+      <div class="line"></div>
+      <b>[Full name]</b>
+      <small>[Designation] · KIY Trucking (Pty) Ltd</small>
+    </div>
+  </main>
+
+  <footer class="ftr">
+    <div class="rule"></div>
+    <div class="band"></div>
+    <div class="cols">
+      <div>
+        <b>KIY TRUCKING (PTY) LTD</b>
+        Reg. No. [0000/000000/07]<br>VAT No. [0000000000]
+      </div>
+      <div class="mid tag">Beyond Borders. <em>Delivering Trust.</em></div>
+      <div class="reg">
+        <b>SOUTH AFRICA &raquo; THE WORLD</b>
+        Directors: [Name], [Name]<br>www.kiytrucking.co.za
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ============ PAGE 2 : CONTINUATION SHEET ============ -->
+<section class="page cont">
+  <header class="hdr">
+    <img class="hdr-logo" src="kiy-trucking-logo.jpg" alt="KIY Trucking">
+    <div class="hdr-contact">
+      <strong>KIY TRUCKING (PTY) LTD</strong>
+      <span>+27 00 000 0000 · info@kiytrucking.co.za</span>
+    </div>
+  </header>
+  <div class="stripe"><div class="a"></div><div class="b"></div></div>
+  <div class="pgnum">Page 2</div>
+
+  <main class="body">
+    <p>[Continuation sheet – body text continues here. This page carries a reduced header so long letters, quotations and schedules stay on brand without repeating the full contact block.]</p>
+  </main>
+
+  <footer class="ftr">
+    <div class="rule"></div>
+    <div class="band"></div>
+    <div class="cols">
+      <div>
+        <b>KIY TRUCKING (PTY) LTD</b>
+        Reg. No. [0000/000000/07]<br>VAT No. [0000000000]
+      </div>
+      <div class="mid tag">Beyond Borders. <em>Delivering Trust.</em></div>
+      <div class="reg">
+        <b>SOUTH AFRICA &raquo; THE WORLD</b>
+        Directors: [Name], [Name]<br>www.kiytrucking.co.za
+      </div>
+    </div>
+  </footer>
+</section>
+
+</body>
+</html>
